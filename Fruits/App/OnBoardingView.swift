@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    var fruits: [Fruit] = fruitsData
     
     //MARK: BODY
     var body: some View {
         TabView() {
-            ForEach(0..<5) { item in
-                FruitCardView()
+            ForEach(fruits[1...5]) { item in
+                FruitCardView(fruit: item)
             }
         }
         .padding(.vertical, 20.0)
