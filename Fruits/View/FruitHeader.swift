@@ -15,7 +15,8 @@ struct FruitHeader: View {
     var body: some View {
         
         ZStack {
-//            LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .top, endPoint: .bottom)
+            // To cover full screen width in Ipads.., we can use LinearGradient
+            LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing)
             Image(fruit.image)
                 .resizable()
                 .renderingMode(.original)
@@ -32,7 +33,9 @@ struct FruitHeader: View {
             }
         }
         
-        .background(LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .top, endPoint: .bottom))
+        // backgroung will cover only backside of image
+        
+//        .background(LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
     }
     
 }
@@ -40,7 +43,7 @@ struct FruitHeader: View {
 struct FruitHeader_Previews: PreviewProvider {
     static var previews: some View {
         FruitHeader(fruit: fruitsData[1])
-            .frame(width: /*@START_MENU_TOKEN@*/375.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/440.0/*@END_MENU_TOKEN@*/)
-            .previewLayout(.sizeThatFits)
+//            .frame(width: 200.0, height: /*@START_MENU_TOKEN@*/440.0/*@END_MENU_TOKEN@*/)
+//            .previewLayout(.sizeThatFits)
     }
 }

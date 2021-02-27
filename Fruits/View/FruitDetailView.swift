@@ -31,6 +31,9 @@ struct FruitDetailView: View {
                             .font(.headline)
                             .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         
+                        //Nutrition
+                        FruitsNutrientsView(fruit: fruit)
+                        
                         //Sub Headline
                         Text("Learn More about \(fruit.title)".uppercased())
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -50,6 +53,7 @@ struct FruitDetailView: View {
                         
                     }//: VStack
                     .padding(20.0)
+                    // Standard maxWidth is 640 to center align view in all screen sizes(IPads..etc)
                     .frame(maxWidth: 640, alignment: .center)
                     
                 
@@ -60,6 +64,7 @@ struct FruitDetailView: View {
             }//: Scroll
             .edgesIgnoringSafeArea(.top)
         }//: Navigation
+        .navigationViewStyle(StackNavigationViewStyle())
       
     }
     
